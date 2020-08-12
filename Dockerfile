@@ -1,6 +1,6 @@
 FROM adoptopenjdk:8-jdk-hotspot-bionic
-LABEL maintainer="Atlassian Bamboo Team" \
-      description="Official Bamboo Server Docker Image"
+LABEL maintainer="Not the Atlassian Bamboo Team" \
+      description="Unofficial Bamboo Server Docker Image with NPM installed"
 
 ENV BAMBOO_USER bamboo
 ENV BAMBOO_GROUP bamboo
