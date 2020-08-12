@@ -19,6 +19,7 @@ RUN set -x && \
      adduser ${BAMBOO_USER} --home ${BAMBOO_USER_HOME} --ingroup ${BAMBOO_GROUP} --disabled-password
 
 RUN set -x && \
+     curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
      apt-get update && \
      apt-get install -y --no-install-recommends \
           curl \
@@ -29,6 +30,7 @@ RUN set -x && \
           openssh-client \
           libtcnative-1 \
           maven \
+          nodejs \
      && \
 # create symlink to maven to automate capability detection
      ln -s /usr/share/maven /usr/share/maven3 && \
@@ -41,7 +43,7 @@ ARG TINI_VERSION=v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
-ARG BAMBOO_VERSION
+ARG BAMBOO_VERSION=7.1.1
 ARG DOWNLOAD_URL=https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-${BAMBOO_VERSION}.tar.gz
 
 RUN set -x && \
