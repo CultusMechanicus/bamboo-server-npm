@@ -31,6 +31,7 @@ RUN set -x && \
           libtcnative-1 \
           maven \
           nodejs \
+          ruby-sass\
      && \
 # create symlink to maven to automate capability detection
      ln -s /usr/share/maven /usr/share/maven3 && \
