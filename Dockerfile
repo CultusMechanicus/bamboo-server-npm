@@ -56,6 +56,9 @@ RUN set -x && \
      chown -R "${BAMBOO_USER}:${BAMBOO_GROUP}" "${BAMBOO_INSTALL_DIR}" && \
      chown -R "${BAMBOO_USER}:${BAMBOO_GROUP}" "${BAMBOO_HOME}"
 
+ADD https://github.com/SalesforceCommerceCloud/sfcc-ci/releases/download/v2.6.0/sfcc-ci-linux /usr/bin/sfcc-ci
+RUN chmod +x /usr/bin/sfcc-ci
+
 VOLUME ["${BAMBOO_HOME}"]
 WORKDIR $BAMBOO_HOME
 
