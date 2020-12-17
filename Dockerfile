@@ -19,7 +19,7 @@ RUN set -x && \
      adduser ${BAMBOO_USER} --home ${BAMBOO_USER_HOME} --ingroup ${BAMBOO_GROUP} --disabled-password
 
 RUN set -x && \
-     curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+     curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
      apt-get update && \
      apt-get install -y --no-install-recommends \
           curl \
